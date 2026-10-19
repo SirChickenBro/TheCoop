@@ -20,9 +20,14 @@ public class PlayerController : NetworkBehaviour
     [SerializeField]
     private GameObject m_axeModel, m_pickAxeModel, m_woodModel, m_stoneModel;
 
-
+    private ResourceSpawner m_resourceSpawner;
     private NetworkVariable<ulong> m_heldNetworkObjectId = new(ulong.MaxValue);
     private NetworkVariable<ObjectType> m_heldObjectType = new(ObjectType.None);
+
+    private void Awake()
+    {
+        m_resourceSpawner = FindAnyObjectByType<ResourceSpawner>();
+    }
 
     private void OnEnable()
     {
@@ -183,22 +188,33 @@ public class PlayerController : NetworkBehaviour
                 }
             }
         }
-        m_heldObjectType.Value = ObjectType.None;
+        else
+        {
+            m_resourceSpawner.SpawnResource(m_heldObjectType.Value, transform.position);
+        }
+            m_heldObjectType.Value = ObjectType.None;
         m_heldNetworkObjectId.Value = ulong.MaxValue;
     }
 
     public override void OnNetworkDespawn()
     {
         m_heldObjectType.OnValueChanged -= HandleHeldItemChanged;
+
+        if (IsServer)
+        {
+            DropCurrentItem();
+        }
+
         if (IsOwner)
         {
-            RequestDropServerRpc();
             m_animationEvents.OnInteract -= HandleInteractAction;
             m_animationEvents.OnAnimationDone -= HandleAnimationDone;
             m_animationEvents.OnChop -= HandleChopAction;
         }
+
         base.OnNetworkDespawn();
     }
+
 
     [Rpc(SendTo.Server)]
     private void RequestDropServerRpc()
