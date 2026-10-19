@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 406328785
+  GlobalObjectIdHash: 1105126877
   InScenePlacedSourceGlobalObjectIdHash: 0
   m_InScenePlacedDisabledByDefault: 0
   DeferredDespawnTick: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_animationEvents: {fileID: 5516115944685011280}
   m_axeModel: {fileID: 7633996361503830611}
   m_pickAxeModel: {fileID: 6563576588607738715}
-  m_woodModel: {fileID: 1840552705418443600}
-  m_stoneModel: {fileID: 2821877509672983411}
+  m_woodModel: {fileID: 2821877509672983411}
+  m_stoneModel: {fileID: 1840552705418443600}
 --- !u!114 &6251079527153510305
 MonoBehaviour:
   m_ObjectHideFlags: 0
