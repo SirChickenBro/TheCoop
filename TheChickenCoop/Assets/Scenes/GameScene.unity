@@ -594,6 +594,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1771786692
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 177516507
+      objectReference: {fileID: 0}
     - target: {fileID: 8797905904205309833, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 863290568
@@ -689,6 +705,7 @@ GameObject:
   - component: {fileID: 299045880}
   - component: {fileID: 299045878}
   - component: {fileID: 299045879}
+  - component: {fileID: 299045881}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -752,6 +769,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &299045881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299045877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757c86e0e2668fb46bbfa4c4f34023b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResourceSpawner
+  ShowTopMostFoldoutHeaderGroup: 1
+  m_woodPrefab: {fileID: 9003397331075799511, guid: e936df660d5d23043941bdbc706607c9, type: 3}
+  m_stonePrefab: {fileID: -1028707448281152128, guid: 52b870ca5e67142869af9c1f57882bfd, type: 3}
 --- !u!1 &306963174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,6 +1857,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720351026}
     m_Modifications:
+    - target: {fileID: 2713505092443684749, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713505092443684749, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1070000157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713505092443684749, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713505092443684749, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 4250036019
+      objectReference: {fileID: 0}
     - target: {fileID: 3563353031477923501, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1975,6 +2023,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4013855169
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 177516507
+      objectReference: {fileID: 0}
     - target: {fileID: 8797905904205309833, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3994099750
@@ -2048,6 +2112,22 @@ PrefabInstance:
     - target: {fileID: 3285824260014196185, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 55.601
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404765605093711143, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404765605093711143, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1195931993
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404765605093711143, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404765605093711143, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1524105987
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2657,6 +2737,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720351026}
     m_Modifications:
+    - target: {fileID: 2713505092443684749, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713505092443684749, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2917791025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713505092443684749, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713505092443684749, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 4250036019
+      objectReference: {fileID: 0}
     - target: {fileID: 3563353031477923501, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -2843,6 +2939,22 @@ PrefabInstance:
     - target: {fileID: 2270968747428323374, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 409277288
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 177516507
       objectReference: {fileID: 0}
     - target: {fileID: 8797905904205309833, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: GlobalObjectIdHash
