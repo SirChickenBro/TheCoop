@@ -1,0 +1,28 @@
+using UnityEngine;
+using Unity.Netcode.Components;
+
+public class PickableTool : PickableBase
+{
+    [SerializeField] 
+    private ComponentController m_componentController;
+
+    protected override void ApplyAvailabilityState(bool newValue)
+    {
+        if (IsServer)
+            m_componentController.SetEnabled(newValue);
+    }
+
+    protected override void OnPickedUp()
+    {
+
+    }
+
+    public void Drop(Vector3 position)
+    {
+        if (IsServer == false)
+            return;
+
+        transform.position = new Vector3(position.x, transform.position.y, position.z);
+        m_isAvailable.Value = true;
+    }
+}
