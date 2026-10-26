@@ -15,6 +15,16 @@ public class GameManager : NetworkBehaviour
     [SerializeField]
     private List<ResourcePallet> m_pallets;
 
+    public NetworkVariable<int> m_woodResource = new(0);
+    public NetworkVariable<int> m_stoneResource = new(0);
+
+    public static GameManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         if(m_multiplayerUI != null)
@@ -101,4 +111,5 @@ public class GameManager : NetworkBehaviour
         NetworkManager.StartHost();
     }
 
+    
 }

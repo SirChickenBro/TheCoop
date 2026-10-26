@@ -89,6 +89,11 @@ public class PlayerController : NetworkBehaviour
                 RequestResourceNodeInteractionServerRpc(
                     m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
             }
+            if (m_interactionDetector.ClosestInteractable is ShadowScript)
+            {
+                RequestAttackShadowServerRpc(
+                    m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
+            }
         }
     }
 
@@ -103,6 +108,20 @@ public class PlayerController : NetworkBehaviour
             return;
 
         node.Harvest(m_heldObjectType.Value);
+    }
+    
+    [Rpc(SendTo.Server)]
+    private void RequestAttackShadowServerRpc(ulong networkObjectId)
+    {
+        if (!NetworkManager.SpawnManager.SpawnedObjects
+               .TryGetValue(networkObjectId, out NetworkObject target))
+            return;
+
+        if (!target.TryGetComponent(out ShadowScript shadow))
+            return;
+
+        Debug.Log("RPC Request");
+        shadow.getChopped();
     }
 
     private void HandleItemOnJoin()
@@ -137,6 +156,12 @@ public class PlayerController : NetworkBehaviour
         if (m_interactionDetector.ClosestInteractable is ResourcePallet)
         {
             RequestGiveItemServerRpc(
+                m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
+        }
+        if (m_interactionDetector.ClosestInteractable is ResourceFortifications)
+        {
+            Debug.Log("HandleInteractAction");
+            RequestRepairFortificationsRpc(
                 m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
         }
     }
@@ -180,7 +205,23 @@ public class PlayerController : NetworkBehaviour
         if (!target.TryGetComponent(out ResourcePallet resourcePallet))
             return;
 
-        if(resourcePallet.Interact(m_heldObjectType.Value))
+        if (resourcePallet.Interact(m_heldObjectType.Value))
+        {
+            m_heldObjectType.Value = ObjectType.None;
+            m_heldNetworkObjectId.Value = ulong.MaxValue;
+        }
+    }
+
+    [Rpc(SendTo.Server)]
+    private void RequestRepairFortificationsRpc(ulong networkObjectId)
+    {
+        if (!NetworkManager.SpawnManager.SpawnedObjects
+            .TryGetValue(networkObjectId, out NetworkObject target))
+            return;
+        if (!target.TryGetComponent(out ResourceFortifications resourceFort))
+            return;
+
+        if (resourceFort.Interact(m_heldObjectType.Value))
         {
             m_heldObjectType.Value = ObjectType.None;
             m_heldNetworkObjectId.Value = ulong.MaxValue;

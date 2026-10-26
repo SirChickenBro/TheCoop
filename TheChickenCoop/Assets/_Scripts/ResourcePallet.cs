@@ -35,6 +35,13 @@ public class ResourcePallet : NetworkBehaviour, IInteractable
         if(m_stackedResources.Value >= m_componentControllers.Count)
         {
             OnPalletFilled?.Invoke();
+            if (objectType is ObjectType.Stone)
+                GameManager.instance.m_stoneResource.Value += 200;
+            if (objectType is ObjectType.Wood)
+                GameManager.instance.m_woodResource.Value += 200;
+
+            Debug.Log(GameManager.instance.m_woodResource.Value);
+            Debug.Log(GameManager.instance.m_stoneResource.Value);
         }
         return true;
     }
