@@ -20,16 +20,26 @@ public class ShadowScript : NetworkBehaviour, IInteractable
         _agent.SetDestination(_destination);
     }
 
-    public override void OnNetworkDespawn()
+    public override void OnDestroy()
     {
 
-        base.OnNetworkDespawn();
+
+        base.OnDestroy();
     }
 
     public void getChopped()
     {
         m_health.Value--;
         Debug.Log(m_health.Value);
+        if (m_health.Value < 1)
+            shadowDie();
+    }
+
+    public void shadowDie()
+    {
+        Debug.Log("Shadow Die");
+        Destroy(gameObject);
+
     }
 
     public void ToggleSelection(bool isSelected)
