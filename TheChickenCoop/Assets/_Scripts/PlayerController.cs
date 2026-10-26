@@ -158,12 +158,43 @@ public class PlayerController : NetworkBehaviour
             RequestGiveItemServerRpc(
                 m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
         }
-        if (m_interactionDetector.ClosestInteractable is ResourceFortifications)
+        /*if (m_interactionDetector.ClosestInteractable is ResourceFortifications)
         {
             Debug.Log("HandleInteractAction");
             RequestRepairFortificationsRpc(
                 m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
         }
+        */
+        
+        if (m_interactionDetector.ClosestInteractable is ResourceFortifications)
+        {
+            Debug.Log("BuildInteract");
+
+            RequestWallInteractServerRpc(
+                m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
+
+        }
+    }
+
+    [Rpc(SendTo.Server)]
+    private void RequestWallInteractServerRpc(ulong networkObjectId)
+    {
+        if (!NetworkManager.SpawnManager.SpawnedObjects
+            .TryGetValue(networkObjectId, out NetworkObject target))
+        {
+            return;
+        }
+        if (!target.TryGetComponent(out ResourceWall wall))
+        {
+            return;
+        }
+        if (!wall.canBeBuilt)
+        {
+            return;
+        }
+        Debug.Log("Requesting Build Wall");
+
+        wall.buildWall(m_heldObjectType.Value);
     }
 
     [Rpc(SendTo.Server)]

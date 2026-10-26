@@ -31261,9 +31261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
   m_selectionOutline: {fileID: 1391834510}
-  m_componentControllers:
-  - {fileID: 1185076606}
-  - {fileID: 1099545550}
+  m_woodWallController: {fileID: 1185076606}
+  m_stoneWallController: {fileID: 1099545550}
   woodWallMaxDurability: 100
   stoneWallMaxDurability: 500
   m_currentObjectType: 0

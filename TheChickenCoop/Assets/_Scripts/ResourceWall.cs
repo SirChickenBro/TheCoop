@@ -9,7 +9,10 @@ public class ResourceWall : NetworkBehaviour, IInteractable
     [SerializeField] private SelectionOutline m_selectionOutline;
 
     [SerializeField]
-    private List<ComponentController> m_componentControllers;
+    private ComponentController m_woodWallController;
+
+    [SerializeField]
+    private ComponentController m_stoneWallController;
 
     [SerializeField] private int woodWallMaxDurability;
     [SerializeField] private int stoneWallMaxDurability;
@@ -17,23 +20,45 @@ public class ResourceWall : NetworkBehaviour, IInteractable
     [SerializeField]
     private ObjectType m_currentObjectType;
 
-    private NetworkVariable<int> m_wallDurability = new(0);
+    public NetworkVariable<int> m_wallDurability = new(0);
+
+    public bool canBeBuilt = true;
+    public bool canBeRepaired = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        m_woodWallController.SetEnabled(false);
+        m_stoneWallController.SetEnabled(false);
+
+        canBeBuilt = true;
+        canBeRepaired = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void buildWall(ObjectType objectType)
     {
+        if (IsServer == false)
+            return;
+        if (m_wallDurability.Value > 0)
+            return;
+        if(m_wallDurability.Value < 0 || m_currentObjectType == ObjectType.None)
+            m_currentObjectType = objectType;
         
-    }
+        if(m_currentObjectType == ObjectType.Stone)
+        {
+            m_stoneWallController.SetEnabled(true);
+            m_wallDurability.Value = stoneWallMaxDurability;
+            Debug.Log("Stone Wall");
+            Debug.Log(m_wallDurability.Value);
+        }
 
-    public void buildWall()
-    {
-
+        if(m_currentObjectType == ObjectType.Wood)
+        {
+            m_woodWallController.SetEnabled(true);
+            m_wallDurability.Value = woodWallMaxDurability;
+            Debug.Log("Wood Wall");
+            Debug.Log(m_wallDurability.Value);
+        }
     }
 
     public void upgradeWall()
@@ -66,6 +91,19 @@ public class ResourceWall : NetworkBehaviour, IInteractable
             m_wallDurability.Value = woodWallMaxDurability;
             GameManager.instance.m_woodResource.Value -= 50;
         }  
+    }
+
+    public void onWallDestroyed()
+    {
+        if (!IsServer)
+            return;
+
+        if (m_wallDurability.Value <= 0)
+        {
+            m_currentObjectType = ObjectType.None;
+            m_stoneWallController.SetEnabled(false);
+            m_woodWallController.SetEnabled(false);
+        }
     }
 
     public void ToggleSelection(bool isSelected)
