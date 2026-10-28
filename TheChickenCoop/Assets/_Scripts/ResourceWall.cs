@@ -13,6 +13,9 @@ public class ResourceWall : NetworkBehaviour, IInteractable
 
     [SerializeField]
     private ComponentController m_stoneWallController;
+    
+    [SerializeField]
+    private ComponentController m_wallColliderIsActive;
 
     [SerializeField] private int woodWallMaxDurability;
     [SerializeField] private int stoneWallMaxDurability;
@@ -64,6 +67,9 @@ public class ResourceWall : NetworkBehaviour, IInteractable
 
     public void upgradeWall()
     {
+        if (IsServer == false)
+            return;
+
         if (m_currentObjectType == ObjectType.Stone)
             return;
 
@@ -75,6 +81,9 @@ public class ResourceWall : NetworkBehaviour, IInteractable
 
     public void repairWall()
     {
+        if (IsServer == false)
+            return;
+
         if (m_currentObjectType == ObjectType.Stone)
         {
             if (m_wallDurability.Value == stoneWallMaxDurability)
