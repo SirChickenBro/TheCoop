@@ -62,7 +62,11 @@ public class ShadowScript : NetworkBehaviour, IInteractable
         if (!IsServer)
             return;
         if (collider.gameObject.name == "MagicCube")
+        {
             shadowDie();
+            GameManager.instance.m_cubeHealth.Value--;
+            Debug.Log(GameManager.instance.m_cubeHealth.Value);
+        }
     }
 
     public void Move(Vector2 movementInput)

@@ -129,8 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AgentMover
   m_characterController: {fileID: 4841560274559653093}
   m_animator: {fileID: 637217615066948756}
-  m_movementSpeed: 4
-  m_rotationSpeed: 200
+  m_movementSpeed: 6
+  m_rotationSpeed: 400
 --- !u!114 &7430483202744239047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1105126877
+  GlobalObjectIdHash: 406328785
   InScenePlacedSourceGlobalObjectIdHash: 0
   m_InScenePlacedDisabledByDefault: 0
   DeferredDespawnTick: 0

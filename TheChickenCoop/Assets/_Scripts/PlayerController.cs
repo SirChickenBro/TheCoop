@@ -168,8 +168,6 @@ public class PlayerController : NetworkBehaviour
         
         if (m_interactionDetector.ClosestInteractable is ResourceWall)
         {
-            Debug.Log("BuildInteract");
-
             RequestWallInteractServerRpc(
                 m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
 
@@ -188,7 +186,7 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
-
+        Debug.Log("Wall Interact Requested");
         wall.buildWall(m_heldObjectType.Value);
     }
 

@@ -34,6 +34,7 @@ public class ResourceWall : NetworkBehaviour, IInteractable
             return;
         m_woodWallController.SetEnabled(false);
         m_stoneWallController.SetEnabled(false);
+        m_wallColliderIsActive.SetEnabled(false);
 
         canBeBuilt = true;
         canBeRepaired = false;
@@ -47,7 +48,7 @@ public class ResourceWall : NetworkBehaviour, IInteractable
             return;
         if(m_wallDurability.Value <= 0 || m_currentObjectType == ObjectType.None)
             m_currentObjectType = objectType;
-        
+
         if(m_currentObjectType == ObjectType.Stone)
         {
             m_stoneWallController.SetEnabled(true);
@@ -63,6 +64,8 @@ public class ResourceWall : NetworkBehaviour, IInteractable
             Debug.Log("Wood Wall");
             Debug.Log(m_wallDurability.Value);
         }
+
+        m_wallColliderIsActive.SetEnabled(true);
     }
 
     public void upgradeWall()
@@ -113,6 +116,7 @@ public class ResourceWall : NetworkBehaviour, IInteractable
             m_currentObjectType = ObjectType.None;
             m_stoneWallController.SetEnabled(false);
             m_woodWallController.SetEnabled(false);
+            m_wallColliderIsActive.SetEnabled(false);
         }
     }
 

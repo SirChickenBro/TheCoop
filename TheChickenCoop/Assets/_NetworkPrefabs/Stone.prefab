@@ -84,6 +84,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d37061370f27ee48a35ba31ebb51c09, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1618974883250481536}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d37061370f27ee48a35ba31ebb51c09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4721851119984445401}
   m_SourcePrefab: {fileID: 100100000, guid: 8d37061370f27ee48a35ba31ebb51c09, type: 3}
 --- !u!23 &5078025294079296788 stripped
 MeshRenderer:
@@ -147,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4250036019
+  GlobalObjectIdHash: 2917791025
   InScenePlacedSourceGlobalObjectIdHash: 0
   m_InScenePlacedDisabledByDefault: 0
   DeferredDespawnTick: 0
@@ -333,3 +336,19 @@ MonoBehaviour:
   m_shakeScale: 1.2
   m_shakeDuration: 0.15
   m_returnDuration: 0.3
+--- !u!208 &4721851119984445401
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735196368025167041}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.7170001, y: 1.8000001, z: 1.7170001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.21900001, y: 0.164, z: -0.031000001}
+  m_TimeToStationary: 0.5

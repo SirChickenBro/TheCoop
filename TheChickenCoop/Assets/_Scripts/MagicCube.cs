@@ -3,13 +3,12 @@ using Unity.Netcode;
 
 public class MagicCube : NetworkBehaviour
 {
-    public NetworkVariable<int> cube_health = new(25);
 
     /*
-    public void Update()
+    void ()
     {
         if(Collider.)
-        material.SetColor("_EmissionColor", yourNewEmissionColour);
+        GameManager.instance.m_cubeHealth.Value--;
     }
     */
 }

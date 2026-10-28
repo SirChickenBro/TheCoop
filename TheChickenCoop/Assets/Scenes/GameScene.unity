@@ -357,7 +357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (3) (Box Collider)
+      value: Wall (3) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (3) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -579,7 +583,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (7) (Box Collider)
+      value: Wall (7) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (7) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -805,7 +813,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (2) (Box Collider)
+      value: Wall (2) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (2) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -1224,7 +1236,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (5) (Box Collider)
+      value: Wall (5) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (5) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -1685,7 +1701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (5) (Box Collider)
+      value: Wall (5) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (5) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -2017,7 +2037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (7) (Box Collider)
+      value: Wall (7) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (7) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -2175,6 +2199,11 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
+  m_cubeHealth:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 25
 --- !u!4 &299045880
 Transform:
   m_ObjectHideFlags: 0
@@ -2920,11 +2949,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicCube
   ShowTopMostFoldoutHeaderGroup: 1
-  cube_health:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 25
 --- !u!114 &506887295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3125,7 +3149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (Box Collider)
+      value: Wall (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -3347,7 +3371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (6) (Box Collider)
+      value: Wall (6) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (6) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -4084,7 +4112,7 @@ MonoBehaviour:
   - {fileID: 514648963}
   m_shadowPrefab: {fileID: 7430483202744239047, guid: c99db1516237e7344aceeb6b227ad8cd, type: 3}
   m_MaxSpawnWaves: 5
-  m_SpawnRatePerSecond: 10
+  m_SpawnRatePerSecond: 1000
 --- !u!114 &1088416435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4285,7 +4313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (4) (Box Collider)
+      value: Wall (4) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (4) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -4550,6 +4582,14 @@ PrefabInstance:
     - target: {fileID: 4293932236357502735, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 177516507
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944474458145170037, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: Components.Array.data[0].name
+      value: Tree (1) (Capsule Collider)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944474458145170037, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Tree (1) (Mesh Renderer)
       objectReference: {fileID: 0}
     - target: {fileID: 8797905904205309833, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -4858,7 +4898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (6) (Box Collider)
+      value: Wall (6) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (6) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -5084,7 +5128,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (3) (Box Collider)
+      value: Wall (3) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (3) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -5697,7 +5745,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (1) (Box Collider)
+      value: Wall (1) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (1) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -6350,7 +6402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (2) (Box Collider)
+      value: Wall (2) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (2) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -6607,9 +6663,25 @@ PrefabInstance:
       value: 2988756789
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
+      value: Wall (4) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
       value: Wall (4) (Box Collider)
       objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[0].Component
+      value: 
+      objectReference: {fileID: 2029675661}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].Component
+      value: 
+      objectReference: {fileID: 2029675662}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
       value: Wall (4)
@@ -6670,6 +6742,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2988756789
       objectReference: {fileID: 0}
+    - target: {fileID: 8868917169981617598, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: m_wallColliderIsActive
+      value: 
+      objectReference: {fileID: 2029675660}
     - target: {fileID: 9128663430276365873, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_InScenePlaced
       value: 1
@@ -6690,6 +6766,27 @@ PrefabInstance:
 --- !u!4 &2029675659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7476140631308128885, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+  m_PrefabInstance: {fileID: 2029675658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2029675660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+  m_PrefabInstance: {fileID: 2029675658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0b25b3f95e5324abc80c09cb29f271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.ComponentController
+--- !u!208 &2029675661 stripped
+NavMeshObstacle:
+  m_CorrespondingSourceObject: {fileID: 3686399066570496949, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+  m_PrefabInstance: {fileID: 2029675658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2029675662 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1118312166046021938, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
   m_PrefabInstance: {fileID: 2029675658}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2070234486
@@ -6865,7 +6962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (1) (Box Collider)
+      value: Wall (1) (Nav Mesh Obstacle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Wall (1) (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
@@ -7421,7 +7522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238009908538106959, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: Components.Array.data[0].name
-      value: Wall (Box Collider)
+      value: Wall (Nav Mesh Obstacle)
       objectReference: {fileID: 0}
     - target: {fileID: 6792980691102652120, guid: 35205007bc49b2842aa1b0ad9027cb03, type: 3}
       propertyPath: m_Name
