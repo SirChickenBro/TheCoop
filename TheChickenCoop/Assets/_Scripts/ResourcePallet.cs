@@ -36,9 +36,9 @@ public class ResourcePallet : NetworkBehaviour, IInteractable
         {
             OnPalletFilled?.Invoke();
             if (objectType is ObjectType.Stone)
-                GameManager.instance.m_stoneResource.Value += 200;
+                GameManager.instance.m_stoneResource.Value += 1000;
             if (objectType is ObjectType.Wood)
-                GameManager.instance.m_woodResource.Value += 200;
+                GameManager.instance.m_woodResource.Value += 1000;
 
             Debug.Log(GameManager.instance.m_woodResource.Value);
             Debug.Log(GameManager.instance.m_stoneResource.Value);

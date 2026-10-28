@@ -15,7 +15,7 @@ public class ResourceWall : NetworkBehaviour, IInteractable
     private ComponentController m_stoneWallController;
     
     [SerializeField]
-    private ComponentController m_wallColliderIsActive;
+    private ComponentController m_obstacleIsActive;
 
     [SerializeField] private int woodWallMaxDurability;
     [SerializeField] private int stoneWallMaxDurability;
@@ -34,7 +34,7 @@ public class ResourceWall : NetworkBehaviour, IInteractable
             return;
         m_woodWallController.SetEnabled(false);
         m_stoneWallController.SetEnabled(false);
-        m_wallColliderIsActive.SetEnabled(false);
+        m_obstacleIsActive.SetEnabled(false);
 
         canBeBuilt = true;
         canBeRepaired = false;
@@ -49,23 +49,33 @@ public class ResourceWall : NetworkBehaviour, IInteractable
         if(m_wallDurability.Value <= 0 || m_currentObjectType == ObjectType.None)
             m_currentObjectType = objectType;
 
-        if(m_currentObjectType == ObjectType.Stone)
+        if (m_currentObjectType == ObjectType.Stone)
         {
+            if (GameManager.instance.m_stoneResource.Value < 200)
+                return;
+
+            GameManager.instance.m_stoneResource.Value -= 200;
             m_stoneWallController.SetEnabled(true);
             m_wallDurability.Value = stoneWallMaxDurability;
             Debug.Log("Stone Wall");
-            Debug.Log(m_wallDurability.Value);
+
+            Debug.Log(GameManager.instance.m_stoneResource.Value);
         }
 
-        if(m_currentObjectType == ObjectType.Wood)
+        if (m_currentObjectType == ObjectType.Wood)
         {
+            if (GameManager.instance.m_woodResource.Value < 100)
+                return;
+
+            GameManager.instance.m_woodResource.Value -= 100;
             m_woodWallController.SetEnabled(true);
             m_wallDurability.Value = woodWallMaxDurability;
             Debug.Log("Wood Wall");
-            Debug.Log(m_wallDurability.Value);
+
+            Debug.Log(GameManager.instance.m_woodResource.Value);
         }
 
-        m_wallColliderIsActive.SetEnabled(true);
+        m_obstacleIsActive.SetEnabled(true);
     }
 
     public void upgradeWall()
@@ -76,9 +86,14 @@ public class ResourceWall : NetworkBehaviour, IInteractable
         if (m_currentObjectType == ObjectType.Stone)
             return;
 
+        if (GameManager.instance.m_stoneResource.Value < 100)
+            return;
+
         m_currentObjectType = ObjectType.Stone;
-        GameManager.instance.m_stoneResource.Value += 50;
+        GameManager.instance.m_stoneResource.Value -= 100;
         GameManager.instance.m_woodResource.Value += 50;
+        m_woodWallController.SetEnabled(false);
+        m_stoneWallController.SetEnabled(true);
         m_wallDurability.Value = stoneWallMaxDurability;
     }
 
@@ -91,6 +106,8 @@ public class ResourceWall : NetworkBehaviour, IInteractable
         {
             if (m_wallDurability.Value == stoneWallMaxDurability)
                 return;
+            if (GameManager.instance.m_woodResource.Value < 100)
+                return;
 
             m_wallDurability.Value = stoneWallMaxDurability;
             GameManager.instance.m_stoneResource.Value -= 100;
@@ -99,6 +116,8 @@ public class ResourceWall : NetworkBehaviour, IInteractable
         if (m_currentObjectType == ObjectType.Wood)
         {
             if (m_wallDurability.Value == woodWallMaxDurability)
+                return;
+            if (GameManager.instance.m_woodResource.Value < 50)
                 return;
 
             m_wallDurability.Value = woodWallMaxDurability;
@@ -116,7 +135,7 @@ public class ResourceWall : NetworkBehaviour, IInteractable
             m_currentObjectType = ObjectType.None;
             m_stoneWallController.SetEnabled(false);
             m_woodWallController.SetEnabled(false);
-            m_wallColliderIsActive.SetEnabled(false);
+            m_obstacleIsActive.SetEnabled(false);
         }
     }
 

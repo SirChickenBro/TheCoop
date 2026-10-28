@@ -4735,7 +4735,7 @@ MonoBehaviour:
   m_selectionOutline: {fileID: 3452199462977837811}
   m_woodWallController: {fileID: 2219569965055008532}
   m_stoneWallController: {fileID: 6326666618981049655}
-  m_wallColliderIsActive: {fileID: 5238009908538106959}
+  m_obstacleIsActive: {fileID: 5238009908538106959}
   woodWallMaxDurability: 100
   stoneWallMaxDurability: 500
   m_currentObjectType: 0
