@@ -1,16 +1,13 @@
 using UnityEngine;
+using Unity.Netcode; 
 
-public class MagicCube : MonoBehaviour
+public class MagicCube : NetworkBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public NetworkVariable<int> cube_health = new(25);
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if(Collider.)
+        material.SetColor("_EmissionColor", yourNewEmissionColour);
     }
 }

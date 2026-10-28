@@ -166,7 +166,7 @@ public class PlayerController : NetworkBehaviour
         }
         */
         
-        if (m_interactionDetector.ClosestInteractable is ResourceFortifications)
+        if (m_interactionDetector.ClosestInteractable is ResourceWall)
         {
             Debug.Log("BuildInteract");
 
@@ -188,11 +188,6 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
-        if (!wall.canBeBuilt)
-        {
-            return;
-        }
-        Debug.Log("Requesting Build Wall");
 
         wall.buildWall(m_heldObjectType.Value);
     }

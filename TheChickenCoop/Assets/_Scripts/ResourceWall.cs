@@ -25,9 +25,10 @@ public class ResourceWall : NetworkBehaviour, IInteractable
     public bool canBeBuilt = true;
     public bool canBeRepaired = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void OnNetworkSpawn()
     {
+        if (!IsServer)
+            return;
         m_woodWallController.SetEnabled(false);
         m_stoneWallController.SetEnabled(false);
 
@@ -41,7 +42,7 @@ public class ResourceWall : NetworkBehaviour, IInteractable
             return;
         if (m_wallDurability.Value > 0)
             return;
-        if(m_wallDurability.Value < 0 || m_currentObjectType == ObjectType.None)
+        if(m_wallDurability.Value <= 0 || m_currentObjectType == ObjectType.None)
             m_currentObjectType = objectType;
         
         if(m_currentObjectType == ObjectType.Stone)

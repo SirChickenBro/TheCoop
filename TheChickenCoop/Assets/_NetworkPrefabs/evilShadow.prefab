@@ -59,7 +59,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2084376289498346152}
   - component: {fileID: 4841560274559653093}
-  - component: {fileID: 6895321537121219383}
   - component: {fileID: 7430483202744239047}
   - component: {fileID: 6251079527153510305}
   - component: {fileID: 8680073125703215947}
@@ -116,22 +115,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.06, z: 0}
---- !u!114 &6895321537121219383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855797244298458106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5bd88ca7be39546bf46598e2325e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AgentMover
-  m_characterController: {fileID: 4841560274559653093}
-  m_animator: {fileID: 637217615066948756}
-  m_movementSpeed: 3
-  m_rotationSpeed: 200
 --- !u!114 &7430483202744239047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +203,10 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   m_selectionOutline: {fileID: 6935571740357741173}
   _agent: {fileID: 3006008823290868851}
+  m_animator: {fileID: 637217615066948756}
+  m_characterController: {fileID: 4841560274559653093}
+  m_movementSpeed: 4
+  m_rotationSpeed: 200
 --- !u!195 &3006008823290868851
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -928,7 +915,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 8b3981fad96f803419391e4b939e0f85, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
