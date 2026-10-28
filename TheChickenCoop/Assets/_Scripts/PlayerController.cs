@@ -236,22 +236,6 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
-    [Rpc(SendTo.Server)]
-    private void RequestRepairFortificationsRpc(ulong networkObjectId)
-    {
-        if (!NetworkManager.SpawnManager.SpawnedObjects
-            .TryGetValue(networkObjectId, out NetworkObject target))
-            return;
-        if (!target.TryGetComponent(out ResourceFortifications resourceFort))
-            return;
-
-        if (resourceFort.Interact(m_heldObjectType.Value))
-        {
-            m_heldObjectType.Value = ObjectType.None;
-            m_heldNetworkObjectId.Value = ulong.MaxValue;
-        }
-    }
-
     private void DropCurrentItem()
     {
         if (IsServer == false)
