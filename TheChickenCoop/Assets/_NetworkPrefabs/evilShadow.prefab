@@ -87,7 +87,6 @@ Transform:
   m_Children:
   - {fileID: 2088593631293467040}
   - {fileID: 4743256779378356117}
-  - {fileID: 1280962453690980623}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &4841560274559653093
@@ -131,7 +130,7 @@ MonoBehaviour:
   InScenePlacedSourceGlobalObjectIdHash: 0
   m_InScenePlacedDisabledByDefault: 0
   DeferredDespawnTick: 0
-  Ownership: 1
+  Ownership: 8
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   m_InScenePlaced: 0
@@ -203,10 +202,6 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   m_selectionOutline: {fileID: 6935571740357741173}
   _agent: {fileID: 3006008823290868851}
-  m_animator: {fileID: 637217615066948756}
-  m_characterController: {fileID: 4841560274559653093}
-  m_movementSpeed: 4
-  m_rotationSpeed: 200
 --- !u!195 &3006008823290868851
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -268,74 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28fb3983763afa4795de0320077432e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
---- !u!1 &2275305539792632927
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1280962453690980623}
-  - component: {fileID: 1540126255103411675}
-  - component: {fileID: 2144400582542736910}
-  m_Layer: 6
-  m_Name: UIDocument
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1280962453690980623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275305539792632927}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.057, y: 2.423, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2084376289498346152}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1540126255103411675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275305539792632927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
-  m_PanelSettings: {fileID: 11400000, guid: 7b3469d3d99c7424aa3bbc552a2f55a8, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: fbabd6e945db091489f8ec60353779f8, type: 3}
-  m_SortingOrder: 0
-  m_Position: 0
-  m_WorldSpaceSizeMode: 0
-  m_WorldSpaceWidth: 200
-  m_WorldSpaceHeight: 50
-  m_PivotReferenceSize: 0
-  m_Pivot: 0
-  m_WorldSpaceCollider: {fileID: 0}
---- !u!114 &2144400582542736910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275305539792632927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5eaf7fd7b9189d43b4df8bcd58f1700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BillboardUI
 --- !u!1001 &1534492991703778817
 PrefabInstance:
   m_ObjectHideFlags: 0
