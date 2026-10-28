@@ -4098,7 +4098,7 @@ MonoBehaviour:
   - {fileID: 514648963}
   m_shadowPrefab: {fileID: 7430483202744239047, guid: c99db1516237e7344aceeb6b227ad8cd, type: 3}
   m_MaxSpawnWaves: 5
-  m_SpawnRatePerSecond: 180
+  m_SpawnRatePerSecond: 60
 --- !u!114 &1088416435
 MonoBehaviour:
   m_ObjectHideFlags: 0

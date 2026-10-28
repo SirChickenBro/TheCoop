@@ -120,7 +120,6 @@ public class PlayerController : NetworkBehaviour
         if (!target.TryGetComponent(out ShadowScript shadow))
             return;
 
-        Debug.Log("RPC Request");
         shadow.getChopped();
     }
 
@@ -158,19 +157,11 @@ public class PlayerController : NetworkBehaviour
             RequestGiveItemServerRpc(
                 m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
         }
-        /*if (m_interactionDetector.ClosestInteractable is ResourceFortifications)
-        {
-            Debug.Log("HandleInteractAction");
-            RequestRepairFortificationsRpc(
-                m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
-        }
-        */
         
         if (m_interactionDetector.ClosestInteractable is ResourceWall)
         {
             RequestWallInteractServerRpc(
                 m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
-
         }
     }
 
@@ -186,8 +177,9 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
+
         Debug.Log("Wall Interact Requested");
-        wall.buildWall(m_heldObjectType.Value);
+            wall.buildWall(m_heldObjectType.Value);
     }
 
     [Rpc(SendTo.Server)]
