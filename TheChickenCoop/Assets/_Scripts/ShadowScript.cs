@@ -63,6 +63,7 @@ public class ShadowScript : NetworkBehaviour, IInteractable
             shadowDie();
             GameManager.instance.m_cubeHealth.Value--;
             Debug.Log(GameManager.instance.m_cubeHealth.Value);
+            GameManager.instance.CheckLossCondition();
         }
     }
 }

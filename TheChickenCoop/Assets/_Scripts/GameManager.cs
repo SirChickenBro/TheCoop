@@ -108,8 +108,11 @@ public class GameManager : NetworkBehaviour
     }
        */
     
-    private void CheckLossCondition()
+    public void CheckLossCondition()
     {
+        if(!IsServer)
+            return;
+        
         if(m_cubeHealth.Value <= 0)
         {
             NetworkManager.SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
