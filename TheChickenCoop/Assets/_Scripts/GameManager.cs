@@ -19,6 +19,17 @@ public class GameManager : NetworkBehaviour
     public NetworkVariable<int> m_stoneResource = new(0);
     public NetworkVariable<int> m_cubeHealth = new(25);
 
+    [SerializeField]
+    private Vector3[] m_spawnPositions =
+    {
+        new Vector3(-2f, 0f, -2f),
+        new Vector3(2f, 0f, -2f),
+        new Vector3(-2f, 0f, 2f),
+        new Vector3(2f, 0f, 2f)
+    };
+
+    private readonly Dictionary<ulong, int> m_spawnSlots = new();
+
     public static GameManager instance;
 
     private void Awake()
@@ -66,6 +77,8 @@ public class GameManager : NetworkBehaviour
             }
             */
         }
+        m_spawnSlots.Clear();
+
         base.OnNetworkDespawn();
     }
 
@@ -77,10 +90,28 @@ public class GameManager : NetworkBehaviour
 
     private void SpawnPlayer(ulong clientID)
     {
-        if (NetworkManager.ConnectedClients[clientID].PlayerObject != null)
+        if (!IsServer || !NetworkManager.ConnectedClients.TryGetValue(clientID, out var client)
+            || client.PlayerObject != null)
             return;
-        GameObject player = Instantiate(m_playerPrefab);
-        player.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID, true);
+
+        for (int slot = 0; slot < m_spawnPositions.Length; slot++)
+        {
+            if (m_spawnSlots.ContainsValue(slot))
+                continue;
+
+            GameObject player = Instantiate(m_playerPrefab, m_spawnPositions[slot],
+                m_playerPrefab.transform.rotation);
+            player.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID, true);
+            m_spawnSlots[clientID] = slot;
+            return;
+        }
+
+        Debug.LogWarning($"No free spawn position for client {clientID}.");
+    }
+
+    private void ReleaseSpawnSlot(ulong clientID)
+    {
+        m_spawnSlots.Remove(clientID);
     }
 
     private void HandleSceneLoadCompleted(string sceneName, LoadSceneMode loadSceneMode,
@@ -121,12 +152,18 @@ public class GameManager : NetworkBehaviour
 
     private void StartClient()
     {
+        if (NetworkManager.IsListening)
+            return;
+
         m_multiplayerUI.DisableButtons();
         NetworkManager.StartClient();
     }
 
     private void StartHost()
     {
+        if (NetworkManager.IsListening)
+            return;
+            
         m_multiplayerUI.DisableButtons();
         NetworkManager.StartHost();
     }
